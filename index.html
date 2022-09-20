@@ -12,12 +12,22 @@
 <body>
     <div id="app">
         <div class="wrapper">
+            <div class="exit" @click="exit"></div>
+            <div class="burgerPage_outer">
+                <div class="test"></div>
+                <div class="burgerPage">
+                    <ul class="page_ul">
+                        <li v-for="i in headerItems">{{i}}</li>
+                    </ul>
+                </div>
+            </div>
             <header>
                 <h2>{{ header }}</h2>
                 <ul class="header_ul">
                     <li v-for="i in headerItems">{{i}}</li>
                 </ul>
-                <div class="burger">
+                <div class="burger" @click="burgerin">
+                    <div class="burgerBox"></div>
                     <div class="line"></div>
                 </div>
             </header>

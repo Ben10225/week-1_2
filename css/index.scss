@@ -221,7 +221,18 @@ footer{
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            .burgerBox{
+                position: absolute;
+                right: 2%;
+                width: 30px;
+                height: 20px;
+                // background-color: red;
+                cursor: pointer;
+                z-index: 30;
+            }
             .line{
+                // z-index: 500;    
                 width: 100%;
                 height: 2px;
                 background-color: #777;
@@ -272,4 +283,90 @@ footer{
 
 .fa-star {
     color: #ffdc16;
+}
+.burgerPage_outer{
+    // background-color: red;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    // .test{
+    //     width: 200px;
+    //     height: 100px;
+    //     position: relative;
+    //     left: 0;
+    //     top: 0;
+    //     background-color: green;
+    //     overflow: hidden;
+    // }
+    .burgerPage{
+        margin: 0;
+        padding: 0;
+        z-index: 500;
+        position: relative;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(100%);
+        display: none;
+        box-shadow: -5px 0px 10px rgba(black,0.3);
+        ul{
+            padding: 0;
+            margin: 0;
+            margin-right: -10px;
+            li{
+                margin: 40px;
+                list-style: none;
+                padding: 0 10px;
+            }
+        }
+        &.pageIn{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            transition: all 0.4s;
+            animation: moveIn 0.7s both;
+        }
+        @keyframes moveIn {
+            0%{
+                transform: translateX(200%);
+                box-shadow: -5px 0px 10px rgba(black,0);
+            }
+            100%{
+                transform: translateX(100%);
+                box-shadow: -5px 0px 10px rgba(black,0.3);
+            }
+        }
+        &.pageOut{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            transition: all 0.4s;
+            animation: moveOut 0.7s both;
+        }
+        @keyframes moveOut {
+            0%{
+                transform: translateX(100%);
+                box-shadow: -5px 0px 10px rgba(black,0.3);
+
+            }
+            100%{
+                transform: translateX(200%);
+                box-shadow: -5px 0px 10px rgba(black,0);
+            }
+        }
+        
+    }
+}
+.exit{
+    width: 100%;
+    height: 100vh;
+    // background-color: red;
+    z-index: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    // cursor: pointer;
 }

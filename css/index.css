@@ -209,6 +209,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+  header .burger .burgerBox {
+    position: absolute;
+    right: 2%;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 30;
   }
   header .burger .line {
     width: 100%;
@@ -256,4 +265,100 @@ footer {
 }
 .fa-star {
   color: #ffdc16;
+}
+
+.burgerPage_outer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+.burgerPage_outer .burgerPage {
+  margin: 0;
+  padding: 0;
+  z-index: 500;
+  position: relative;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(100%);
+  display: none;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.burgerPage_outer .burgerPage ul {
+  padding: 0;
+  margin: 0;
+  margin-right: -10px;
+}
+.burgerPage_outer .burgerPage ul li {
+  margin: 40px;
+  list-style: none;
+  padding: 0 10px;
+}
+.burgerPage_outer .burgerPage.pageIn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.4s;
+  -webkit-animation: moveIn 0.7s both;
+          animation: moveIn 0.7s both;
+}
+@-webkit-keyframes moveIn {
+  0% {
+    transform: translateX(200%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: translateX(100%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes moveIn {
+  0% {
+    transform: translateX(200%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: translateX(100%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+.burgerPage_outer .burgerPage.pageOut {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.4s;
+  -webkit-animation: moveOut 0.7s both;
+          animation: moveOut 0.7s both;
+}
+@-webkit-keyframes moveOut {
+  0% {
+    transform: translateX(100%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: translateX(200%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0);
+  }
+}
+@keyframes moveOut {
+  0% {
+    transform: translateX(100%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: translateX(200%);
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0);
+  }
+}
+
+.exit {
+  width: 100%;
+  height: 100vh;
+  z-index: 700;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
 }/*# sourceMappingURL=index.css.map */

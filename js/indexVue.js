@@ -52,4 +52,44 @@ Vue.createApp({
             items
         }
     },
+    methods: {
+        burgerin(){
+            let burgerPage = document.querySelector(".burgerPage")
+            let exit = document.querySelector(".exit")
+            burgerPage.classList.add("pageIn")
+            burgerPage.classList.remove("pageOut")
+            setTimeout(()=>{
+                exit.style = "display: block"
+            },300)
+        
+        },
+        exit(){
+            let burgerPage = document.querySelector(".burgerPage")
+            let exit = document.querySelector(".exit")
+            exit.style = "display: none"
+            burgerPage.classList.remove("pageIn")
+            burgerPage.classList.add("pageOut")
+        }
+    },
 }).mount("#app")
+
+
+// 原生 js 做法
+/* 
+let burger = document.querySelector(".burger")
+let burgerPage = document.querySelector(".burgerPage")
+let exit = document.querySelector(".exit")
+
+burger.onclick = function(){
+    burgerPage.classList.add("pageIn")
+    burgerPage.classList.remove("pageOut")
+    setTimeout(()=>{
+        exit.style = "display: block"
+    },300)
+}
+exit.onclick = function(){
+    exit.style = "display: none"
+    burgerPage.classList.remove("pageIn")
+    burgerPage.classList.add("pageOut")
+}
+*/
