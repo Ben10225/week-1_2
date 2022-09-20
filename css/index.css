@@ -1,0 +1,259 @@
+body {
+  font-size: 20px;
+  font-family: serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2, p {
+  margin: 0;
+}
+
+header {
+  padding: 5px 10px;
+}
+header h2 {
+  font-size: 20px;
+  display: inline-block;
+}
+header ul {
+  float: right;
+  display: inline-block;
+  margin: 0;
+  margin-right: -10px;
+}
+header ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 10px;
+}
+header .burger {
+  display: none;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section .title {
+  width: 100%;
+  height: 300px;
+  background-color: #ccf1ff;
+  margin-bottom: 20px;
+}
+section .title h2 {
+  font-size: 40px;
+  text-align: center;
+  line-height: 300px;
+}
+section .content {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section .content .promotions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+section .content .promotions .proItem {
+  width: 48%;
+  height: 50px;
+  position: relative;
+}
+section .content .promotions .proItem:first-child {
+  background-color: #eab9cd;
+}
+section .content .promotions .proItem:last-child {
+  background-color: #bbc2ed;
+}
+section .content .promotions .proItem .proImg {
+  width: 80px;
+  height: 50px;
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  margin-right: 10px;
+}
+section .content .promotions .proItem .proImg.team1 {
+  background-image: url("../image/blackpink.jpeg");
+}
+section .content .promotions .proItem .proImg.team2 {
+  background-image: url("../image/girlsday.jpeg");
+  background-size: 110%;
+  background-position: 90% 15%;
+}
+section .content .promotions .proItem .teamName {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline;
+  margin: 0;
+}
+section .content .itemBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section .content .itemBox .item {
+  margin-top: 40px;
+  width: 22%;
+  /*
+  .itemTxt{
+      width: 100%;
+      height: 50px;
+      // background-color: #bad2d6;
+      position: relative;
+      text-align: center;
+      line-height: 50px;
+      z-index: 50;
+      &.teamR{
+          background-color: #eab9cd;
+      }
+      &.teamB{
+          background-color: #bbc2ed;
+      }
+  }
+  */
+}
+section .content .itemBox .item .itemImg {
+  position: relative;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center;
+}
+section .content .itemBox .item .itemImg.bp_m1 {
+  background-image: url("../image/jisoo.png");
+}
+section .content .itemBox .item .itemImg.bp_m2 {
+  background-image: url("../image/jennie.jpeg");
+}
+section .content .itemBox .item .itemImg.bp_m3 {
+  background-image: url("../image/rose.jpeg");
+  background-size: 150%;
+  background-position: 50% 10%;
+}
+section .content .itemBox .item .itemImg.bp_m4 {
+  background-image: url("../image/lisa.jpeg");
+}
+section .content .itemBox .item .itemImg.gd_m1 {
+  background-image: url("../image/yura.jpeg");
+  background-position: 0% 0%;
+}
+section .content .itemBox .item .itemImg.gd_m2 {
+  background-image: url("../image/minah.jpeg");
+}
+section .content .itemBox .item .itemImg.gd_m3 {
+  background-image: url("../image/sojin.jpeg");
+  background-position: 0% 30%;
+}
+section .content .itemBox .item .itemImg.gd_m4 {
+  background-image: url("../image/hyeri.jpeg");
+  background-size: 140%;
+  background-position: 20% 20%;
+}
+section .content .itemBox .item .itemImg .fa-star {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  transform: scale(1.3);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+}
+section .content .itemBox .item .itemImg .itemTxt {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  line-height: 50px;
+  z-index: 50;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+section .content .itemBox .item .itemImg .itemTxt.teamR {
+  background-color: rgba(234, 185, 205, 0.4);
+}
+section .content .itemBox .item .itemImg .itemTxt.teamB {
+  background-color: rgba(187, 194, 237, 0.5);
+}
+
+footer {
+  margin: 0;
+  height: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    max-width: 90%;
+  }
+  .content .item {
+    width: 48% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header_ul {
+    display: none;
+  }
+  header .burger {
+    float: right;
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: #777;
+    position: relative;
+  }
+  header .burger .line::after, header .burger .line::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #777;
+  }
+  header .burger .line::before {
+    top: -7px;
+  }
+  header .burger .line::after {
+    top: 7px;
+  }
+  .title h2 {
+    font-size: 37px !important;
+  }
+  .content {
+    max-width: 90%;
+  }
+  .content .promotions {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  .content .promotions .proItem {
+    width: 100% !important;
+    height: 50px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .content .item {
+    width: 100% !important;
+  }
+  .content .item:first-child {
+    margin-top: 0 !important;
+  }
+}
+.fa-star {
+  color: #ffdc16;
+}/*# sourceMappingURL=index.css.map */
