@@ -20,7 +20,7 @@ Vue.createApp({
             {name:"Rose", team:"bp_m3", color:"R"},
             {name:"Lisa", team:"bp_m4", color:"R"},
             {name:"So Jin", team:"gd_m3", color:"B"},
-            {name:"Hyeri-ah", team:"gd_m4", color:"B"},
+            {name:"Hyeri", team:"gd_m4", color:"B"},
         ]
 
         let width = document.body.clientWidth
@@ -33,7 +33,7 @@ Vue.createApp({
                 {name:"Rose", team:"bp_m3", color:"R"},
                 {name:"So Jin", team:"gd_m3", color:"B"},
                 {name:"Lisa", team:"bp_m4", color:"R"},
-                {name:"Hyeri-ah", team:"gd_m4", color:"B"},
+                {name:"Hyeri", team:"gd_m4", color:"B"},
             ]
         }else if(width <= 600){
             items = [
@@ -44,7 +44,7 @@ Vue.createApp({
                 {name:"Yura", team:"gd_m1", color:"B"},
                 {name:"Min-ah", team:"gd_m2", color:"B"},
                 {name:"So Jin", team:"gd_m3", color:"B"},
-                {name:"Hyeri-ah", team:"gd_m4", color:"B"},
+                {name:"Hyeri", team:"gd_m4", color:"B"},
             ]
         }
 
