@@ -33,9 +33,10 @@ header .burger {
 }
 
 section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 100%;
 }
 section .title {
   width: 100%;
@@ -50,19 +51,17 @@ section .title h2 {
 }
 section .content {
   width: 1200px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 section .content .promotions {
   width: 100%;
-  display: flex;
   justify-content: space-between;
+  display: grid;
+  grid-template-columns: 0.48fr 0.48fr;
 }
 section .content .promotions .proItem {
-  width: 48%;
   height: 50px;
   position: relative;
+  padding: 0;
 }
 section .content .promotions .proItem:first-child {
   background-color: #eab9cd;
@@ -96,30 +95,12 @@ section .content .promotions .proItem .teamName {
 }
 section .content .itemBox {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 0.22fr);
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 section .content .itemBox .item {
   margin-top: 40px;
-  width: 22%;
-  /*
-  .itemTxt{
-      width: 100%;
-      height: 50px;
-      // background-color: #bad2d6;
-      position: relative;
-      text-align: center;
-      line-height: 50px;
-      z-index: 50;
-      &.teamR{
-          background-color: #eab9cd;
-      }
-      &.teamB{
-          background-color: #bbc2ed;
-      }
-  }
-  */
 }
 section .content .itemBox .item .itemImg {
   position: relative;
@@ -193,8 +174,9 @@ footer {
   .content {
     max-width: 90%;
   }
-  .content .item {
-    width: 48% !important;
+  .content .itemBox {
+    grid-template-columns: repeat(2, 0.48fr) !important;
+    justify-content: space-between;
   }
 }
 @media screen and (max-width: 600px) {
@@ -245,21 +227,16 @@ footer {
     max-width: 90%;
   }
   .content .promotions {
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
+    grid-template-columns: 1fr !important;
   }
   .content .promotions .proItem {
-    width: 100% !important;
-    height: 50px;
     position: relative;
     margin-bottom: 30px;
   }
-  .content .item {
-    width: 100% !important;
+  .content .itemBox {
+    grid-template-columns: 1fr !important;
   }
-  .content .item:first-child {
+  .content .itemBox .item:first-child {
     margin-top: 0 !important;
   }
 }
