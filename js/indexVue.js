@@ -9,6 +9,7 @@ Vue.createApp({
                 {name:"Girl's Day", color:"team2"},
             ],
             items: "",
+            ct: 0,
         }
     },
     setup(){
@@ -54,22 +55,23 @@ Vue.createApp({
     },
     methods: {
         burgerin(){
+            this.ct ++
             let burgerPage = document.querySelector(".burgerPage")
-            let exit = document.querySelector(".exit")
             burgerPage.classList.add("pageIn")
             burgerPage.classList.remove("pageOut")
-            setTimeout(()=>{
-                exit.style = "display: block"
-            },300)
-        
+            // console.log(this.ct)
+            let click = 0
+            document.addEventListener("click",function(evt){
+                click ++
+                if (click > 1){
+                    // console.log("click: ",click)
+                    this.removeEventListener("click", arguments.callee)
+                    burgerPage.classList.remove("pageIn")
+                    burgerPage.classList.add("pageOut")
+                }
+            })
+            return this.ct
         },
-        exit(){
-            let burgerPage = document.querySelector(".burgerPage")
-            let exit = document.querySelector(".exit")
-            exit.style = "display: none"
-            burgerPage.classList.remove("pageIn")
-            burgerPage.classList.add("pageOut")
-        }
     },
 }).mount("#app")
 
