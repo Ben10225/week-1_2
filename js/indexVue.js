@@ -79,7 +79,7 @@ Vue.createApp({
         let lst = JSON.parse( JSON.stringify(this.lst))
         window.addEventListener("resize", ()=>{
             let width = document.body.clientWidth
-            
+
             if(width > 1200){
                 lst[0] = 1
             }else if(width <= 1200 && width > 600){
@@ -93,7 +93,9 @@ Vue.createApp({
                 i == 1 ? ct++ : null
             }
             if(ct > 1){
-                window.location.href = "../index.html"
+                // window.location.href = "../index.html"
+                window.location.href = "https://ben10225.github.io/index.html"
+                
             }
         }, true);
     },
