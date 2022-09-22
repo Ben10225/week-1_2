@@ -86,13 +86,10 @@ Vue.createApp({
             }else if(width <= 600){
                 lst[2] = 1
             }
-            console.log(lst)
             let ct = 0
             for(let i of lst){
                 i == 1 ? ct++ : null
             }
-            
-            console.log(ct)
             if(ct > 1){
                 window.open("../index.html","_self")
             }
