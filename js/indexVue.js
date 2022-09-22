@@ -76,25 +76,26 @@ Vue.createApp({
     },
     mounted(){
         // let list = [0,0,0]
-        var lst = JSON.parse( JSON.stringify(this.lst))
+        let lst = JSON.parse( JSON.stringify(this.lst))
         window.addEventListener("resize", ()=>{
             let width = document.body.clientWidth
+
             if(width > 1200){
                 lst[0] = 1
-            }else if(width <= 1200 && width >600){
+            }else if(width <= 1200 && width > 600){
                 lst[1] = 1
             }else if(width <= 600){
                 lst[2] = 1
             }
-            console.log(lst)
+
             let ct = 0
             for(let i of lst){
                 i == 1 ? ct++ : null
             }
-            
-            console.log(ct)
             if(ct > 1){
-                window.open("../index.html","_self")
+                // window.location.href = "../index.html"
+                window.location.href = "https://ben10225.github.io/week-1_2/"
+                
             }
         }, true);
     },
@@ -121,22 +122,6 @@ exit.onclick = function(){
 }
 */
 
-
-/*
-if(window.attachEvent) {
-    window.attachEvent('onresize', function() {
-        alert('attachEvent - resize');
-    });
-}
-else if(window.addEventListener) {
-    window.addEventListener('resize', function() {
-        console.log('addEventListener - resize');
-    }, true);
-}
-else {
-    //The browser does not support Javascript event binding
-}
-*/
 /*
 let list = [0,0,0]
 window.addEventListener("resize", function(){
