@@ -92,11 +92,11 @@ Vue.createApp({
             for(let i of lst){
                 i == 1 ? ct++ : null
             }
-            if(ct > 1){
-                // window.location.href = "../index.html"
-                window.location.href = "https://ben10225.github.io/week-1_2/"
+            ct > 1 ? window.location.href = "https://ben10225.github.io/week-1_2/" : null
+            // window.location.href = "../index.html"
                 
-            }
+                
+            
         }, true);
     },
 }).mount("#app")
