@@ -91,7 +91,7 @@ Vue.createApp({
                 i == 1 ? ct++ : null
             }
             if(ct > 1){
-                window.open("../index.html","_self")
+                window.location.href = "../index.html"
             }
         }, true);
     },
