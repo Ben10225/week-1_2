@@ -94,7 +94,7 @@ Vue.createApp({
             }
             if(ct > 1){
                 // window.location.href = "../index.html"
-                window.location.href = "https://ben10225.github.io/index.html"
+                window.location.href = "https://ben10225.github.io/week-1_2/"
                 
             }
         }, true);
