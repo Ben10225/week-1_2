@@ -10,6 +10,7 @@ Vue.createApp({
             ],
             items: "",
             ct: 0,
+            lst: [0,0,0],
         }
     },
     setup(){
@@ -73,6 +74,30 @@ Vue.createApp({
             return this.ct
         },
     },
+    mounted(){
+        // let list = [0,0,0]
+        var lst = JSON.parse( JSON.stringify(this.lst))
+        window.addEventListener("resize", ()=>{
+            let width = document.body.clientWidth
+            if(width > 1200){
+                lst[0] = 1
+            }else if(width <= 1200 && width >600){
+                lst[1] = 1
+            }else if(width <= 600){
+                lst[2] = 1
+            }
+            console.log(lst)
+            let ct = 0
+            for(let i of lst){
+                i == 1 ? ct++ : null
+            }
+            
+            console.log(ct)
+            if(ct > 1){
+                window.open("../index.html","_self")
+            }
+        }, true);
+    },
 }).mount("#app")
 
 
@@ -94,4 +119,42 @@ exit.onclick = function(){
     burgerPage.classList.remove("pageIn")
     burgerPage.classList.add("pageOut")
 }
+*/
+
+
+/*
+if(window.attachEvent) {
+    window.attachEvent('onresize', function() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+    window.addEventListener('resize', function() {
+        console.log('addEventListener - resize');
+    }, true);
+}
+else {
+    //The browser does not support Javascript event binding
+}
+*/
+/*
+let list = [0,0,0]
+window.addEventListener("resize", function(){
+    let width = document.body.clientWidth
+    if(width > 1200){
+        list[0] = 1
+    }else if(width <= 1200 && width >600){
+        list[1] = 1
+    }else if(width <= 600){
+        list[2] = 1
+    }
+    let ct = 0
+    for(let i of list){
+        i == 1 ? ct++ : null
+    }
+    if(ct > 1){
+        window.open("../index.html","_self")
+    }
+
+}, true);
 */
